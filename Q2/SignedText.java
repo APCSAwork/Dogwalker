@@ -21,7 +21,24 @@ public class SignedText{
         return show;
     }
     public String addSignature(String word){
-      
+        int where = this.getSignature().indexOf(word);
+        String newmane = "";
+        if(where > -1){
+            if (where == 0){
+                int howbig = word.lenght;
+
+                String word = word(howbig);
+                newmane += word + this.getSignature().substring(where);
+                return newmane;
+            }
+            else{
+                return this.getSignature();
+            }
+            
+
+        }
+        newmane = word+this.getSignature();
+        return newmane;
         
     }
 
